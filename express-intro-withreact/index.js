@@ -1,4 +1,5 @@
 const express = require('express');
+const phone = require('./phone.json');
 const app = express();
 const port = 5000;
 
@@ -9,7 +10,11 @@ app.get('/', (req, res) => {
 })
 app.get('/phone', (req, res) => {
 
-    res.send('this is phone component')
+    res.send(phone)
+})
+app.get('/phone/:id', (req, res) => {
+    const id = req.params.id;
+    res.send(id)
 })
 
 app.listen(port, () => {
