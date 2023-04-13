@@ -1,7 +1,17 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 const Phone = () => {
-	return <div>phone</div>;
+	const phone = useLoaderData();
+	console.log(phone);
+
+	return (
+		<div>
+			<div>{phone.name}</div>
+
+			<img src={phone.image} alt="" />
+		</div>
+	);
 };
 
 export default Phone;
